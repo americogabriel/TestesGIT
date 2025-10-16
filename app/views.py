@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import UsuarioForm
 
 def home(request):
-    return HttpResponse("<h1> Home do site <\h1>")
+    data = {}
+    data['form'] = UsuarioForm
+    return render(request,'app/home.html',data)
+
+
