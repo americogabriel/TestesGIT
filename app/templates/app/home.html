@@ -6,7 +6,11 @@
     <title>Inicio</title>
 </head>
 <body>
-    <h1> Bem vindo ao inicio da página !</h1>
+    {% if usuario_nome %}
+        <h1> Bem vindo ao inicio da página {{usuario_nome}} !</h1>
+    {% else %}
+        <h1> Bem vindo ao inicio da página seu MERDA !</h1>
+    {% endif %}
     <h3> Responda ao Formulário abaixo para se cadastrar: </h3>
     <form method="POST">
         {% csrf_token %}
